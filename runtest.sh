@@ -9,7 +9,7 @@ do
         #run the loadtest in the background for 5 seconds
         ./loadtest $i &
         sleep 5
-        #set the number of completions since first loadtest
+        #set the number of completions for this loadtest
         completions=`wc -l < synthetic.dat`
         #set variable idleTime to be equal to the system idle time during the loadtest
         idleTime=`mpstat -o JSON | jq '.sysstat.hosts[0].statistics[0]."cpu-load"[0].idle'`
