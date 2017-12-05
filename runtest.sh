@@ -1,6 +1,6 @@
 #!/bin/bash
 #Echo the title for the output table to file named results.dat
-echo -e "CO\tN\tidle" > results.dat
+echo -e "C0\tN\tidle" > results.dat
 #re-set the counter for the number of completions of the loadtest
 completions=0
 #for loop to increase the number of concurrent users every loop
@@ -16,5 +16,5 @@ do
         #output the number of completions, number of concurrent users and the system idle time for each loa$
         echo -e "$completions\t$i\t$idleTime" >> results.dat
         #kill the loadtest process
-        pkill loadtest  
+        pkill loadtest
 done
