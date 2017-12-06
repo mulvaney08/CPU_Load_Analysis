@@ -14,7 +14,7 @@ do
         sleep 5
         #set variable idleTime to be equal to the system idle time during the loadtest
         idleTime=`mpstat -o JSON | jq '.sysstat.hosts[0].statistics[0]."cpu-load"[0].idle'`
-        #set the number of completions since first loadtest
+        #set the number of completions for this loadtest
         completions=`wc -l < synthetic.dat`
         #output the number of completions, number of concurrent users and the system idle time for each loadtest
         echo -e "$completions\t$i\t$idleTime" >> results.dat
